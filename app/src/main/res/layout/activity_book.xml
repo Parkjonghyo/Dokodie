@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="#A3C0CB"
-    >
+    android:background="#A3C0CB">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,14 +22,13 @@
                 android:layout_height="wrap_content"></LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="25"
+                android:layout_height="27dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="60"
+                    android:layout_weight="80"
                     android:background="#5B91A6"></LinearLayout>
 
                 <LinearLayout
@@ -38,54 +37,177 @@
                     android:layout_weight="1"
                     android:background="@drawable/page"></LinearLayout>
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#5B91A6"
-                android:orientation="vertical">
+                android:background="#A3C0CB"
+
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="30"
+                    android:background="@drawable/rightline"></LinearLayout>
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:paddingTop="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="25dp"
+                    android:orientation="vertical"
                     >
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:fontFamily="@font/spring_wind"
-                        android:gravity="center_horizontal|bottom"
-                        android:text="책 정보?"
-                        android:textColor="#F2E0C9"
-                        android:textSize="50dp" />
+                        android:layout_height="120dp"
+                        android:paddingBottom="30dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/sc_dream6"
+                            android:gravity="bottom"
+                            android:text="이방인"
+                            android:textColor="#000000"
+                            android:textSize="27dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom"
+                            android:fontFamily="@font/sc_dream4"
+                            android:text=" | "
+                            android:textColor="#4F4B39"
+                            android:textSize="27dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom"
+                            android:fontFamily="@font/sc_dream4"
+                            android:text="여기는 부제목 자리랍니다"
+                            android:textColor="#4F4B39"
+                            android:textSize="23dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="270dp"
+                            android:layout_weight="5"
+                            android:layout_marginRight="25dp"
+                            android:gravity="center_vertical">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/stranger"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical"
+                            android:lineSpacingMultiplier="2">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="알베르 카뮈"
+                                android:textSize="20dp"
+                                android:textColor="#000000"
+                                android:fontFamily="@font/sc_dream4"
+                                android:layout_marginBottom="20dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="민음사"
+                                android:textSize="20dp"
+                                android:textColor="#000000"
+                                android:fontFamily="@font/sc_dream4"
+                                android:layout_marginBottom="20dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2011.03.25"
+                                android:textSize="20dp"
+                                android:textColor="#000000"
+                                android:fontFamily="@font/sc_dream4"
+                                android:layout_marginBottom="20dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="8,100원"
+                                android:textSize="23dp"
+                                android:textColor="#000000"
+                                android:fontFamily="@font/sc_dream6"/>
+                        </LinearLayout>
+                        </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sc_dream4"
+                            android:lineSpacingExtra="7dp"
+                            android:text="20세기의 지성이자 실존주의 문학의 대표 작가 알베르 카뮈.
+현실에서 소외되어 이방인으로 살아가는 현대인의 초상을 그리다.\n\n
+낯선 인물과 독창적인 형식으로 현대 프랑스 문단에 '이방인'처럼 나타난 소설.
+젊은 무명 작가였던 알베르 카뮈에게 세계적 명성을 안겨준 이 작품은 현실에서
+소외되어 이방인으로 살아가는 현대인이 죽음을 앞두고 비로소 마주하는 실존의
+체험을 강렬하게 그린다. 카뮈는 '영웅적인 태도를 취하지 않으면서 진실을 위해서는
+죽음도 마다하지 않는' 뫼르소라는 인물을 통해 기존의 관습과 규칙에서 벗어난
+새로운 인간상을 제시한다.\n\n알제에서 선박 중개인 사무실 직원으로 일하는 뫼르소.
+그는 교육을 받았지만 신분 상승 욕구나 야심이 없고 생활의 변화를 원하지 않는,
+이상할 정도로 주위에 무관심한 청년이다. 그런 그는 우발적 살인을 저지른 후 세상에서
+'이방인'이 되어 버리는데, 변호사와 재판관, 사제 등 그를 도우려는 누구도 뫼르소를
+온전히 이해하지 못하고 그 또한 주위 세계를 받아들이지 못한다. 카뮈는 이처럼 자신을
+둘러싼 것들에서 철저하게 소외된 뫼르소의 삶, 죽음에 이르러서야 신앙과 구원의 유혹을
+떨치고 자기 자신과 세계를 똑바로 마주하게 되는 그의 모습을 통해 억압적인 관습과
+부조리 속에 살아가는 고독한 현대인의 초상을 그린다."
+                            android:textColor="#4F4B39"
+                            android:textSize="17dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical|center_horizontal"
+                            >
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/doko_black" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="독고다이"
+                            android:fontFamily="@font/kopub_batang_medium"
+                            android:textColor="#000000"
+                            android:textSize="15dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    >
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:orientation="horizontal"
-                    android:paddingTop="10dp"
-                    android:layout_weight="3">
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
-                        android:src="@drawable/doko"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#ffffff"
-                        android:fontFamily="@font/kopub_batang_medium"
-                        android:textSize="15dp"
-                        android:text="독고다이"/>
-                </LinearLayout>
+                </ScrollView>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

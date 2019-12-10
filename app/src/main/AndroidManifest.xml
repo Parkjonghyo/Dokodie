@@ -22,6 +22,7 @@
 
         <activity android:name=".ParsingActivity"/>
         <activity android:name=".BestSellerActivity"/>
+        <activity android:name=".BookActivity"/>
     </application>
 
 </manifest>
