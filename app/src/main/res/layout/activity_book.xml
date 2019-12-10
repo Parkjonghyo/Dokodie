@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"></LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="30dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -188,7 +188,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:gravity="center_vertical|center_horizontal"
+                            android:gravity="center_horizontal|bottom"
+                            android:paddingBottom="50dp"
                             >
                         <ImageView
                             android:layout_width="15dp"

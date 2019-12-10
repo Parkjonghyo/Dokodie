@@ -1,5 +1,6 @@
 package com.cookandroid.dokodie;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -23,6 +24,9 @@ public class BestSellerActivity extends AppCompatActivity {
     private HashMap<String, String> inputData1=new HashMap<>();
     private  HashMap<String, String> inputData2=new HashMap<>();
     private ListView listView;
+
+    public static Activity bestS_Activity;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,11 +36,15 @@ public class BestSellerActivity extends AppCompatActivity {
         bestBtn=findViewById(R.id.bestseller);
         calBtn=findViewById(R.id.calendar);
 
+        bestS_Activity=BestSellerActivity.this;
+
         newBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(BestSellerActivity.this, MainActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_right);
+                bestS_Activity.finish();
             }
         });
 

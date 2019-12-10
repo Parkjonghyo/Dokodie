@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout book1;
     BookDatabaseManager databaseManager;
 
+    public static Activity newB_Activity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,11 +43,15 @@ public class MainActivity extends AppCompatActivity {
         calBtn=findViewById(R.id.calendar);
         book1=findViewById(R.id.book1);
 
+        newB_Activity=MainActivity.this;
+
         bestBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, BestSellerActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
+                newB_Activity.finish();
             }
         });
 
@@ -54,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(MainActivity.this, BookActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
             }
         });
     }
