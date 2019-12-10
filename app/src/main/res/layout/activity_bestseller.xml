@@ -106,7 +106,8 @@
                         android:id="@+id/bestlist"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#ffffff"></ListView>
+                        android:background="#ffffff"
+                        android:scrollbars="none"></ListView>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
