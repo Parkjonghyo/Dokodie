@@ -9,9 +9,11 @@ import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,6 +46,10 @@ public class BestSellerActivity extends AppCompatActivity {
 
         bestS_Activity=BestSellerActivity.this;
 
+        listView=(ListView)findViewById(R.id.bestlist);
+
+        dataSetting();
+
         newBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,10 +70,21 @@ public class BestSellerActivity extends AppCompatActivity {
             }
         });
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                /*Toast.makeText(BestSellerActivity.this ,bookList.get(i+10).getTitle(),Toast.LENGTH_LONG).show();*/
 
-        listView=(ListView)findViewById(R.id.bestlist);
+                Intent intent = new Intent(BestSellerActivity.this, BookActivity.class);
 
-        dataSetting();
+                intent.putExtra("BookItem", bookList.get(i+10));
+
+                startActivity(intent);
+                overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
+
+                // TODO- 이제 여따가 Intent 추가해서 보내버리면 됨 ^^
+            }
+        });
     }
 
     private void dataSetting(){

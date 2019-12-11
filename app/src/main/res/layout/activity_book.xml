@@ -74,6 +74,7 @@
                         android:layout_height="120dp"
                         android:paddingBottom="30dp">
                         <TextView
+                            android:id="@+id/real_title"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:fontFamily="@font/sc_dream6"
@@ -110,6 +111,7 @@
                             android:layout_marginRight="25dp"
                             android:gravity="center_vertical">
                             <ImageView
+                                android:id="@+id/bookimg"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:src="@drawable/stranger"/>
@@ -122,6 +124,7 @@
                             android:gravity="center_vertical"
                             android:lineSpacingMultiplier="2">
                             <TextView
+                                android:id="@+id/real_writer"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="알베르 카뮈"
@@ -130,6 +133,7 @@
                                 android:fontFamily="@font/sc_dream4"
                                 android:layout_marginBottom="20dp"/>
                             <TextView
+                                android:id="@+id/real_publisher"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="민음사"
@@ -138,6 +142,7 @@
                                 android:fontFamily="@font/sc_dream4"
                                 android:layout_marginBottom="20dp"/>
                             <TextView
+                                android:id="@+id/real_date"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="2011.03.25"
@@ -146,6 +151,7 @@
                                 android:fontFamily="@font/sc_dream4"
                                 android:layout_marginBottom="20dp"/>
                             <TextView
+                                android:id="@+id/real_price"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="8,100원"
@@ -160,6 +166,7 @@
                         android:paddingTop="20dp"
                         android:paddingBottom="20dp">
                         <TextView
+                            android:id="@+id/real_contents"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/sc_dream4"
