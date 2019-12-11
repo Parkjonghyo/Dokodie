@@ -69,6 +69,7 @@ public class BookDatabaseManager {
                 whereArgs);
     }
 
+    // Select구문
     public Cursor query(String[] colums,
                         String selection,
                         String[] selectionArgs,
@@ -76,6 +77,7 @@ public class BookDatabaseManager {
                         String having,
                         String orderby)
     {
+
         return mydatabase.query(TABLE_Books,
                 colums,
                 selection,
