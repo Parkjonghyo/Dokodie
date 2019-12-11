@@ -92,23 +92,21 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1">
 
-                        <HorizontalScrollView
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:fadingEdge="none"
                             android:paddingLeft="20dp"
                             android:paddingTop="20dp"
                             android:paddingRight="20dp"
-                            android:paddingBottom="20dp"
-                            android:scrollbars="none">
+                            android:paddingBottom="20dp">
 
                                 <android.support.v7.widget.RecyclerView
                                     android:id="@+id/main_recyclerview"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_vertical"
                                     android:orientation="horizontal"
-                                    android:scrollbars="horizontal" />
+                                    android:scrollbars="none" />
 
                                 <!--<LinearLayout-->
                                     <!--android:layout_width="match_parent"-->
@@ -172,7 +170,7 @@
                                         <!--android:textColor="#8A8362"-->
                                         <!--android:textSize="15dp" />-->
                                 <!--</LinearLayout>-->
-                        </HorizontalScrollView>
+                        </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
 
