@@ -8,6 +8,8 @@ import android.database.Cursor;
 import android.os.Parcel;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -19,9 +21,10 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     Button newBtn, bestBtn, calBtn;
-    LinearLayout book1;
     BookDatabaseManager databaseManager;
     ArrayList<BookItem> bookList;
+
+    private ArrayList<RecyclerItem> dataList;
 
     public static Activity newB_Activity;
 
@@ -29,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        this.InitializeData();
+
+        RecyclerView recyclerView=(RecyclerView)findViewById(R.id.main_recyclerview);
+        LinearLayoutManager manager=new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
+        recyclerView.setLayoutManager(manager); //LayoutManager 등록
+        recyclerView.setAdapter(new RecyclerAdapter(dataList));
 
         databaseManager = BookDatabaseManager.getInstance(this);
 
@@ -49,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
         newBtn=findViewById(R.id.newbook);
         bestBtn=findViewById(R.id.bestseller);
         calBtn=findViewById(R.id.calendar);
-        book1=findViewById(R.id.book1);
 
         newB_Activity=MainActivity.this;
 
@@ -65,15 +74,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        book1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(MainActivity.this, BookActivity.class);
-
-                startActivity(intent);
-                overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
-            }
-        });
 
         calBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +83,19 @@ public class MainActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
             }
         });
+
     }
+
+
+    public void InitializeData(){
+        dataList=new ArrayList<>();
+
+        dataList.add(new RecyclerItem(R.drawable.gatsby, "위대한 개츠비", "F. 스콧 피츠제럴드"));
+        dataList.add(new RecyclerItem(R.drawable.stranger, "이방인", "알베르 카뮈"));
+        dataList.add(new RecyclerItem(R.drawable.gatsby, "위대한 개츠비", "F. 스콧 피츠제럴드"));
+    }
+
+
 
     // 앱 설치후 처음에만 실행되는 코드
     public void checkFirstRun(){
