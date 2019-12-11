@@ -22,6 +22,7 @@ public class BookItem {
 
     public void setPublisher(String publisher) {
         this.publisher = publisher;
+
     }
 
     public void setTitle(String title) {
@@ -30,5 +31,29 @@ public class BookItem {
 
     public void setWriter(String writer) {
         this.writer = writer;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getWriter() {
+        return writer;
     }
 }

@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     Button newBtn, bestBtn, calBtn;
     LinearLayout book1;
     BookDatabaseManager databaseManager;
+    ArrayList<BookItem> bookList;
 
     public static Activity newB_Activity;
 
@@ -32,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
 
         // TODO-이거 실행하면 초기 DB에 다 들어감
         checkFirstRun();
+        // 실행 후 bookList (ArrayList<BookItem> 에 책 정보가 들어감)
+        //
+        getBookData();
+
+        // TODO - 이렇게 씀 bookList.get(0).getTitle(); 이러면 우리집에 엄마가 산다가 나옴
 
         //Intent intent = new Intent(this, ParsingActivity.class);
         //startActivity(intent);
@@ -119,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void getBookData()
     {
-        ArrayList<BookItem> bookList = new ArrayList<>();
+        bookList = new ArrayList<>();
 
         String[] columns = new String[] {"_id", "title", "writer", "publisher", "date", "price"};
 
