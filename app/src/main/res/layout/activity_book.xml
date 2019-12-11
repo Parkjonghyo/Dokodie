@@ -91,14 +91,14 @@
                             android:text=" | "
                             android:textColor="#4F4B39"
                             android:textSize="27dp"/>
-                        <TextView
+                        <!--<TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:gravity="bottom"
                             android:fontFamily="@font/sc_dream4"
                             android:text="여기는 부제목 자리랍니다"
                             android:textColor="#4F4B39"
-                            android:textSize="23dp"/>
+                            android:textSize="23dp"/>-->
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"

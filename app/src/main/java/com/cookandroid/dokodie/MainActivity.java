@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<BookItem> bookList;
 
     private ArrayList<RecyclerItem> dataList;
+    private RecyclerAdapter recAdapter;
 
     public static Activity newB_Activity;
 
@@ -33,28 +34,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // TODO-이거 실행하면 초기 DB에 다 들어감
+        checkFirstRun();
+
+        databaseManager = BookDatabaseManager.getInstance(this);
+
+        // 실행 후 bookList (ArrayList<BookItem> 에 책 정보가 들어감)
+
+        getBookData();
+
         this.InitializeData();
 
         RecyclerView recyclerView=(RecyclerView)findViewById(R.id.main_recyclerview);
         LinearLayoutManager manager=new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(manager); //LayoutManager 등록
-        recyclerView.setAdapter(new RecyclerAdapter(dataList));
-
-        databaseManager = BookDatabaseManager.getInstance(this);
-
-        // TODO-이거 실행하면 초기 DB에 다 들어감
-        checkFirstRun();
-        // 실행 후 bookList (ArrayList<BookItem> 에 책 정보가 들어감)
-        //
-
-        getBookData();
-
-        // TODO - 이렇게 씀 bookList.get(0).getTitle(); 이러면 우리집에 엄마가 산다가 나옴
-
-        //Intent intent = new Intent(this, ParsingActivity.class);
-        //startActivity(intent);
-
-        //getBookData();
+        recAdapter = new RecyclerAdapter(dataList);
+        recyclerView.setAdapter(recAdapter);
 
         newBtn=findViewById(R.id.newbook);
         bestBtn=findViewById(R.id.bestseller);
@@ -84,15 +79,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        recAdapter.setOnItemClickListener(new RecyclerAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                Intent intent = new Intent(MainActivity.this, BookActivity.class);
+
+                intent.putExtra("BookItem", bookList.get(position));
+
+                startActivity(intent);
+                overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
+            }
+        });
     }
 
 
     public void InitializeData(){
         dataList=new ArrayList<>();
 
-        dataList.add(new RecyclerItem(R.drawable.gatsby, "위대한 개츠비", "F. 스콧 피츠제럴드"));
-        dataList.add(new RecyclerItem(R.drawable.stranger, "이방인", "알베르 카뮈"));
-        dataList.add(new RecyclerItem(R.drawable.gatsby, "위대한 개츠비", "F. 스콧 피츠제럴드"));
+        for(int i = 0;i<=9;i++){
+            dataList.add(new RecyclerItem(bookList.get(i).getBookImgNumber(), bookList.get(i).getTitle(), bookList.get(i).getWriter()));
+        }
     }
 
 

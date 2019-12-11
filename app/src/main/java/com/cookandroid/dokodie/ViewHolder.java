@@ -1,3 +1,4 @@
+/*
 package com.cookandroid.dokodie;
 
 import android.support.v7.widget.RecyclerView;
@@ -18,3 +19,4 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         writer=itemView.findViewById(R.id.bookwriter);
     }
 }
+*/
