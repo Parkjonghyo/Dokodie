@@ -2,6 +2,7 @@ package com.cookandroid.dokodie;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
@@ -19,6 +20,7 @@ public class BestSellerActivity extends AppCompatActivity {
 
     Button newBtn, bestBtn, calBtn;
 
+    ArrayList<BookItem> bookList;
 
     private ArrayList<HashMap<String, String>> Data = new ArrayList<HashMap<String, String>>();
     private HashMap<String, String> inputData1=new HashMap<>();
@@ -35,6 +37,10 @@ public class BestSellerActivity extends AppCompatActivity {
         newBtn=findViewById(R.id.newbook);
         bestBtn=findViewById(R.id.bestseller);
         calBtn=findViewById(R.id.calendar);
+
+        Intent intent = getIntent();
+
+        bookList = intent.getExtras().getParcelableArrayList("BookList");
 
         bestS_Activity=BestSellerActivity.this;
 
@@ -68,8 +74,8 @@ public class BestSellerActivity extends AppCompatActivity {
 
         MyAdapter myAdapter= new MyAdapter();
 
-        for(int i=1;i<=10;i++){
-            myAdapter.addItem(""+i, ContextCompat.getDrawable(getApplicationContext(),R.drawable.gatsby), "위대한 개츠비", "F. 스콧 피츠제럴드");
+        for(int i=10;i<=19;i++){
+            myAdapter.addItem(""+(i-9), ContextCompat.getDrawable(getApplicationContext(),bookList.get(i).getBookImgNumber()), bookList.get(i).getTitle(), bookList.get(i).getWriter());
         }
 
         listView.setAdapter(myAdapter);

@@ -39,7 +39,8 @@ public class BookDatabaseManager {
                 "writer TEXT," +
                 "publisher TEXT," +
                 "date TEXT," +
-                "price INTEGER);");
+                "price INTEGER," +
+                "bookImgNumber INTEGER);");
     }
 
     // insert구문 TODO- 나만 못해
