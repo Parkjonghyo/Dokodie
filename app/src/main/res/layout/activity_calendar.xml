@@ -11,9 +11,9 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="20dp">
+            android:layout_height="195dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -22,30 +22,31 @@
                 <RelativeLayout
                     android:id="@+id/rl_iv_back_btn_bg"
                     android:layout_width="50dp"
-                    android:layout_height="100dp"/>
+                    android:layout_height="100dp" />
+
                 <ImageView
+                    android:id="@+id/iv_back_btn"
                     android:layout_width="25dp"
                     android:layout_height="16dp"
-                    android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="15dp"
-                    android:id="@+id/iv_back_btn"
                     android:src="@drawable/aricalendar_btn_back" />
 
                 <TextView
-                    android:text="재설정"
+                    android:id="@+id/rl_reset_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:textColor="#5B91A6"
+                    android:layout_centerVertical="true"
                     android:gravity="center"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
-                    android:textSize="17sp"
-                    android:layout_alignParentEnd="true"
-                    android:id="@+id/rl_reset_btn" />
+                    android:text="재설정"
+                    android:textColor="#5B91A6"
+                    android:textSize="17sp" />
 
 
             </RelativeLayout>
@@ -77,11 +78,11 @@
                             android:id="@+id/tv_start_date"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentBottom="true"
-                            android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true"
-                            android:layout_marginBottom="14dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentBottom="true"
                             android:layout_marginLeft="15dp"
+                            android:layout_marginBottom="14dp"
                             android:text="-"
                             android:textColor="#4F4B39"
                             android:textSize="16sp" />
@@ -91,8 +92,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_above="@+id/tv_start_date"
-                            android:layout_alignLeft="@+id/tv_start_date"
                             android:layout_alignStart="@+id/tv_start_date"
+                            android:layout_alignLeft="@+id/tv_start_date"
                             android:layout_marginBottom="5dp"
                             android:text="Start"
                             android:textColor="#9b9b9b"
@@ -109,11 +110,11 @@
                             android:id="@+id/tv_end_date"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentBottom="true"
-                            android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true"
-                            android:layout_marginBottom="14dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentBottom="true"
                             android:layout_marginLeft="16dp"
+                            android:layout_marginBottom="14dp"
                             android:text="-"
                             android:textColor="#4F4B39"
                             android:textSize="16sp" />
@@ -129,8 +130,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_above="@+id/tv_end_date"
-                            android:layout_alignLeft="@+id/tv_end_date"
                             android:layout_alignStart="@+id/tv_end_date"
+                            android:layout_alignLeft="@+id/tv_end_date"
                             android:layout_marginBottom="5dp"
                             android:text="End"
                             android:textColor="#9b9b9b"
@@ -149,108 +150,121 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
                     android:layout_marginBottom="11dp"
-                    android:weightSum="7"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="7">
 
                     <RelativeLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1">
+
                         <TextView
+                            android:id="@+id/tv_day_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
                             android:text="일"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_centerHorizontal="true"
-                            android:textSize="11sp"
                             android:textColor="#F2785C"
-                            android:id="@+id/tv_day_one"/>
+                            android:textSize="11sp" />
                     </RelativeLayout>
+
                     <RelativeLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1">
+
                         <TextView
+                            android:id="@+id/tv_day_two"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
                             android:text="월"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_centerHorizontal="true"
-                            android:textSize="11sp"
                             android:textColor="#414141"
-                            android:id="@+id/tv_day_two" />
+                            android:textSize="11sp" />
                     </RelativeLayout>
+
                     <RelativeLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1">
+
                         <TextView
+                            android:id="@+id/tv_day_three"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
                             android:text="화"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_centerHorizontal="true"
-                            android:textSize="11sp"
                             android:textColor="#414141"
-                            android:id="@+id/tv_day_three" />
+                            android:textSize="11sp" />
                     </RelativeLayout>
+
                     <RelativeLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1">
+
                         <TextView
+                            android:id="@+id/tv_day_four"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
                             android:text="수"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_centerHorizontal="true"
-                            android:textSize="11sp"
                             android:textColor="#414141"
-                            android:id="@+id/tv_day_four"  />
+                            android:textSize="11sp" />
                     </RelativeLayout>
+
                     <RelativeLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1">
+
                         <TextView
+                            android:id="@+id/tv_day_five"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
                             android:text="목"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_centerHorizontal="true"
-                            android:textSize="11sp"
                             android:textColor="#414141"
-                            android:id="@+id/tv_day_five"  />
+                            android:textSize="11sp" />
                     </RelativeLayout>
+
                     <RelativeLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1">
+
                         <TextView
+                            android:id="@+id/tv_day_six"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
                             android:text="금"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_centerHorizontal="true"
-                            android:textSize="11sp"
                             android:textColor="#414141"
-                            android:id="@+id/tv_day_six"/>
+                            android:textSize="11sp" />
                     </RelativeLayout>
+
                     <RelativeLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1">
+
                         <TextView
-                            android:text="토"
+                            android:id="@+id/tv_day_seven"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
                             android:layout_centerHorizontal="true"
-                            android:textSize="11sp"
+                            android:layout_centerVertical="true"
+                            android:text="토"
                             android:textColor="#5B91A6"
-                            android:id="@+id/tv_day_seven"/>
+                            android:textSize="11sp" />
                     </RelativeLayout>
 
 
@@ -260,10 +274,12 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#d8d8d8"
-                    android:layout_alignParentBottom="true"/>
+                    android:background="#d8d8d8" />
             </RelativeLayout>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></LinearLayout>
         <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
 
             <!--xmlns:tools="http://schemas.android.com/tools"-->
@@ -279,13 +295,13 @@
 
                 <!--android:layout_width="match_parent"-->
 
-                <!--android:layout_height="0px"-->
+                <!--android:layout_height="match_parent"-->
 
                 <!--android:layout_weight="1"-->
 
-                <!--android:minDate="04/01/2013"-->
+                <!--android:minDate="12/01/2019"-->
 
-                <!--android:maxDate="12/31/2013"-->
+                <!--android:maxDate="12/31/2020"-->
 
                 <!--android:focusedMonthDateColor="#ff0000"-->
 
