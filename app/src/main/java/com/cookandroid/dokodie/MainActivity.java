@@ -93,6 +93,10 @@ public class MainActivity extends AppCompatActivity {
         dataList.add(new RecyclerItem(R.drawable.gatsby, "위대한 개츠비", "F. 스콧 피츠제럴드"));
         dataList.add(new RecyclerItem(R.drawable.stranger, "이방인", "알베르 카뮈"));
         dataList.add(new RecyclerItem(R.drawable.gatsby, "위대한 개츠비", "F. 스콧 피츠제럴드"));
+        dataList.add(new RecyclerItem(R.drawable.stranger, "이방인", "알베르 카뮈"));
+        dataList.add(new RecyclerItem(R.drawable.gatsby, "위대한 개츠비", "F. 스콧 피츠제럴드"));
+        dataList.add(new RecyclerItem(R.drawable.stranger, "이방인", "알베르 카뮈"));
+        dataList.add(new RecyclerItem(R.drawable.gatsby, "위대한 개츠비", "F. 스콧 피츠제럴드"));
     }
 
 

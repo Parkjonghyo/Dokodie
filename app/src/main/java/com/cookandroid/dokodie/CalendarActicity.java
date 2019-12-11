@@ -6,24 +6,28 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
-public class CalendarActicity extends AppCompatActivity {
+import com.squareup.timessquare.CalendarPickerView;
 
-    ImageView back;
+import java.util.Calendar;
+import java.util.Date;
+
+import static com.squareup.timessquare.CalendarPickerView.SelectionMode.RANGE;
+
+public class CalendarActicity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
-        back=findViewById(R.id.iv_back_btn);
 
 
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        Calendar nextYear = Calendar.getInstance();
+        nextYear.add(Calendar.YEAR, 1);
 
+        CalendarPickerView calendar = (CalendarPickerView) findViewById(R.id.calendar_view);
+        Date today = new Date();
+        calendar.init(today, nextYear.getTime())
+                .inMode(RANGE);
     }
 }
