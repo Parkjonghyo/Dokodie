@@ -49,6 +49,16 @@ public class BestSellerActivity extends AppCompatActivity {
         });
 
 
+        calBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BestSellerActivity.this, CalendarActicity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
+            }
+        });
+
+
         listView=(ListView)findViewById(R.id.bestlist);
 
         dataSetting();
