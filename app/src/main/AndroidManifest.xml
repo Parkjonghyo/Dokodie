@@ -13,9 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity"/>
-        <activity android:name=".ParsingActivity"/>
         <activity android:name=".BestSellerActivity"/>
         <activity android:name=".BookActivity"/>
+        <activity android:name=".CalendarActicity"/>
         <activity android:name=".IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
