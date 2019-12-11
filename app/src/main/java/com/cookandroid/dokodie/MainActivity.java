@@ -34,10 +34,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        databaseManager = BookDatabaseManager.getInstance(this);
+
         // TODO-이거 실행하면 초기 DB에 다 들어감
         checkFirstRun();
-
-        databaseManager = BookDatabaseManager.getInstance(this);
 
         // 실행 후 bookList (ArrayList<BookItem> 에 책 정보가 들어감)
 
