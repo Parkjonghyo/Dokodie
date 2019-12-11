@@ -70,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(MainActivity.this, BookActivity.class);
 
+                intent.putExtra("BookItem", bookList.get(0));
+
                 startActivity(intent);
                 overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
             }
